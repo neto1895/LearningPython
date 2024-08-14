@@ -30,3 +30,33 @@ def count_negatives(nums):
     return len([num for num in nums if num < 0])
 print(count_negatives([1,-2,-1,-3,0,22]))
 
+
+#Ejercicio 1
+
+def has_lucky_number(nums):
+    """Return whether the given list of numbers is lucky. A lucky list contains
+    at least one number divisible by 7.
+    """
+    if nums == []: 
+        return False
+    for num in nums: 
+        if (num % 7 == 0 and num !=0 ):
+            return True
+        else: estado = False
+    return estado
+
+# To create a more clean code we can use: 
+def oneLineLuckyNomber(nums):
+    return any([num % 7 == 0 for num in nums])
+        
+print(has_lucky_number([3,7]))
+print(oneLineLuckyNomber([3,7]))
+
+def count_by(x, n):
+    """
+    Return a sequence of numbers counting by `x` `n` times.
+    """
+    secc = [x*(t+1) for t in range(n)]
+    return secc
+
+print(count_by(2,5))
